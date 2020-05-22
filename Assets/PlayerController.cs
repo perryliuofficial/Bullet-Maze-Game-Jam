@@ -1,17 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
 
     public float speed;
+    public Text countText;
+    public Text loseText;
     public GameObject bulletprefab;
+    private int score;
+    private int ammo;
+    private int nextScene;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        score = 0;
+        ammo = 10;
+        SetCountText ();
+        nextScene = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
     // Update is called once per frame
@@ -55,8 +65,46 @@ public class PlayerController : MonoBehaviour
 		}
 
         //Fire Bullet
-        if (Input.GetButton("Fire1")){
-            Instantiate(bulletprefab, transform.position + transform.forward, transform.rotation);
+        if (Input.GetButtonDown("Fire1")){
+            if (ammo >= 1){
+                ammo -= 1;
+                SetCountText ();
+                Instantiate(bulletprefab, transform.position + transform.forward, transform.rotation);
+            }
         }
     }
+
+    void OnTriggerEnter(Collider other) 
+    {
+        if (other.gameObject.CompareTag ("Collect Item"))
+        {
+            other.gameObject.SetActive (false);
+            score += 1;
+            ammo += 2;
+            SetCountText ();
+        }
+
+        if (score >= 20) {
+            SceneManager.LoadScene(nextScene);
+        }
+    }
+
+    private void OnCollisionEnter(Collision thiscollision) {
+        GameObject theirGameObject = thiscollision.gameObject;
+        if (theirGameObject.GetComponent<EnemyController>() != null) {
+            gameObject.SetActive (false);
+            SetLoseText();
+        };
+    }
+
+    void SetCountText ()
+    {
+        countText.text = "Ammo: " + ammo.ToString();
+    }
+
+    void SetLoseText ()
+    {
+        loseText.text = "R to restart\nEscape to quit";
+    }
+
 }
