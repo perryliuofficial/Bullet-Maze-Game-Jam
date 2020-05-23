@@ -2190,7 +2190,7 @@ MonoBehaviour:
     type: 3}
   ammo: 0
   secondsBetweenShots: 0.2
-  nextScene: Level14
+  nextScene: Level15
   audioSource1: {fileID: 1512082480}
   volume1: 0.1
   audioSource2: {fileID: 432061734}
@@ -3340,7 +3340,7 @@ PrefabInstance:
     - target: {fileID: 6734792008140081933, guid: 10ea114c5a06f364db5801b39d3d7f70,
         type: 3}
       propertyPath: nextScene
-      value: Level14
+      value: Level15
       objectReference: {fileID: 0}
     - target: {fileID: 6734792008140081933, guid: 10ea114c5a06f364db5801b39d3d7f70,
         type: 3}
