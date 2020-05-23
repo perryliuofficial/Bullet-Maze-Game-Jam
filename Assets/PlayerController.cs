@@ -14,14 +14,18 @@ public class PlayerController : MonoBehaviour
     private int score;
     private int ammo;
     private int nextScene;
+    public float secondsBetweenShots;
+
+    float secondsSinceLastShot;
 
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
-        ammo = 10;
+        ammo = 5;
         SetCountText ();
         nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+        secondsSinceLastShot = secondsBetweenShots;
     }
 
     // Update is called once per frame
@@ -65,12 +69,13 @@ public class PlayerController : MonoBehaviour
 		}
 
         //Fire Bullet
-        if (Input.GetButtonDown("Fire1")){
-            if (ammo >= 1){
+        secondsSinceLastShot += Time.deltaTime;
+
+        if (secondsSinceLastShot >= secondsBetweenShots && Input.GetButton("Fire1") && ammo >= 1){
                 ammo -= 1;
                 SetCountText ();
                 Instantiate(bulletprefab, transform.position + transform.forward, transform.rotation);
-            }
+                secondsSinceLastShot = 0;
         }
     }
 
