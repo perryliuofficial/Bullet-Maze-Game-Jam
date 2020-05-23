@@ -3,7 +3,7 @@
 
 Play as a legally distinct pellet-eating ghostbuster who is definitely not Pac-Man, where the pellets are your bullets. Turns out not-Pac-Man is kind of a dick towards ghosts.
 
-Playable at: TBC
+Playable at: https://perryliuofficial.itch.io/bullet-maze-game-jam
 
 ![Screenshot](/Screenshot1.png)
 
