@@ -6,3 +6,7 @@ Play as a legally distinct pellet-eating ghostbuster who is definitely not Pac-M
 Playable at: TBC
 
 ![Screenshot](/Screenshot1.png)
+
+### Acknowledgements
+- `SFX` **Pew Pew Sound** by [DKnight556](http://soundbible.com/1949-Pew-Pew.html) *Public Domain*
+- `SFX` **Retro Bonus Pickup SFX** by [suntemple](https://freesound.org/people/suntemple/sounds/253172/) *Public Domain*
