@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
+
+    public string levelToLoad = "MainMenu";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +20,10 @@ public class LevelController : MonoBehaviour
         if (Input.GetKeyDown("r"))
         {
             SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+        }
+        if (Input.GetKeyDown("escape"))
+        {
+            SceneManager.LoadScene(levelToLoad);
         }
     }
 }

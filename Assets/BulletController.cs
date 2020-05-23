@@ -24,7 +24,8 @@ public class BulletController : MonoBehaviour
     private void OnCollisionEnter(Collision thiscollision) {
         GameObject theirGameObject = thiscollision.gameObject;
         if (theirGameObject.GetComponent<EnemyController>() != null) {
-            Destroy(theirGameObject);
+            HealthSystem theirHealthSystem = theirGameObject.GetComponent<HealthSystem>();
+            theirHealthSystem.TakeDamage(1);
             Destroy(gameObject);
         };
     }

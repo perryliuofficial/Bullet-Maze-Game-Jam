@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5134678918198107666}
   - component: {fileID: 5134678918198107669}
   - component: {fileID: 195313133226461050}
+  - component: {fileID: 3124758265542282861}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -107,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1b7c039f2eb6b4894bbff953bc7e19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6734792008140081930, guid: 10ea114c5a06f364db5801b39d3d7f70, type: 3}
   agent: {fileID: 195313133226461050}
 --- !u!54 &5134678918198107669
 Rigidbody:
@@ -147,3 +147,16 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3124758265542282861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5134678918198107668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ef4f699411d5c4cb3b29de39a1d62b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1

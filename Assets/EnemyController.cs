@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyController : MonoBehaviour
 {
 
-    public GameObject player;
+    // public GameObject player;
     public NavMeshAgent agent;
     //public float enemySpeed;
 
@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(player.transform.position);
+        agent.SetDestination(References.thePlayer.transform.position);
         // Rigidbody ourRigidBody = GetComponent<Rigidbody>();
         // Vector3 vectorToPlayer = player.transform.position - transform.position;
         // ourRigidBody.velocity = vectorToPlayer.normalized * enemySpeed;

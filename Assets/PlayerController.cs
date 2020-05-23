@@ -12,11 +12,15 @@ public class PlayerController : MonoBehaviour
     public Text loseText;
     public GameObject bulletprefab;
     private int score;
-    private int ammo;
+    public int ammo;
     // private int nextScene;
     public float secondsBetweenShots;
     public string nextScene;
     // public int numEnemy;
+    public AudioSource audioSource1;
+    public float volume1=0.5f;
+    public AudioSource audioSource2;
+    public float volume2=0.5f;
 
     float secondsSinceLastShot;
 
@@ -24,10 +28,10 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         score = 0;
-        ammo = 5;
         SetCountText ();
         // nextScene = SceneManager.GetActiveScene().buildIndex + 1;
         secondsSinceLastShot = secondsBetweenShots;
+        References.thePlayer = gameObject;
     }
 
     // Update is called once per frame
@@ -78,6 +82,8 @@ public class PlayerController : MonoBehaviour
                 SetCountText ();
                 Instantiate(bulletprefab, transform.position + transform.forward, transform.rotation);
                 secondsSinceLastShot = 0;
+                audioSource1.PlayOneShot(audioSource1.clip, volume1);
+                
         }
     }
 
@@ -89,6 +95,7 @@ public class PlayerController : MonoBehaviour
             score += 1;
             ammo += 2;
             SetCountText ();
+            audioSource2.PlayOneShot(audioSource2.clip, volume2);
         }
 
         if (score >= 20) {
