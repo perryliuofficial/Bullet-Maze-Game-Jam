@@ -13,8 +13,10 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletprefab;
     private int score;
     private int ammo;
-    private int nextScene;
+    // private int nextScene;
     public float secondsBetweenShots;
+    public string nextScene;
+    // public int numEnemy;
 
     float secondsSinceLastShot;
 
@@ -24,7 +26,7 @@ public class PlayerController : MonoBehaviour
         score = 0;
         ammo = 5;
         SetCountText ();
-        nextScene = SceneManager.GetActiveScene().buildIndex + 1;
+        // nextScene = SceneManager.GetActiveScene().buildIndex + 1;
         secondsSinceLastShot = secondsBetweenShots;
     }
 
