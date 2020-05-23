@@ -7,4 +7,4 @@ Loosely based on Tom Francis' [Tutorial Series](https://www.youtube.com/watch?v=
 
 Playable at: TBC
 
-![Screenshot](/Screenshot1.PNG)
+![Screenshot](/Screenshot1.png)
